@@ -1,0 +1,124 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+    
+}
+
+body{
+    font-family: "poppins" sans-serif;
+    background-color: #344a72;
+    line-height: 1.8;
+}
+
+.rain {
+    position: absolute;
+    width: 1px; /* Width of each raindrop */
+    height: 100%; /* Height of rain container */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2)); /* Gradient for raindrop color */
+    animation: rain-animation 0.5s linear infinite; /* Apply animation */
+   
+}
+
+@keyframes rain-animation {
+    from {
+        transform: translateY(-50vh); /* Initial position above the viewport */
+    }
+    to {
+        transform: translateY(100vh); /* Move down below the viewport */
+    }
+}
+
+.rain::before {
+    content: "";
+    position: absolute;
+    width: 2px; /* Width of each raindrop pseudo-element */
+    height: 10px; /* Height of raindrop pseudo-element */
+    background-color: rgba(255, 255, 255, 0.8); /* Color of raindrops */
+    border-radius: 50%; /* Round shape to simulate droplets */
+    animation: raindrop-animation 0.5s linear infinite; /* Apply animation */
+}
+
+@keyframes raindrop-animation {
+    0% {
+        opacity: 0; /* Initial opacity */
+        transform: translateY(-10px) rotateZ(45deg); /* Initial position and rotation */
+    }
+    50% {
+        opacity: 1; /* Maximum opacity */
+    }
+    100% {
+        opacity: 0; /* Fade out */
+        transform: translateY(100vh) rotateZ(45deg); /* Move down and maintain rotation */
+    }
+}
+
+a{
+    text-decoration: none;
+}
+
+#container{
+    margin: 30px auto;
+    max-width: 500px;
+    padding: 20px;
+
+}
+
+.form-wrap{
+    background: white;
+    padding: 15px 25px;
+    color: #333;
+    
+}
+
+.form-wrap h1,
+.form-wrap p{
+    text-align: center;
+}
+
+.form-wrap .form-group{
+    margin-top: 15px;
+}
+
+.form-wrap .form-group input{
+    display: block;
+    color: #666;
+}
+
+.form-wrap .form-group input{
+    width: 100%;
+    padding: 10px;
+    border: #ddd 1px solid;
+    border-radius: 5px;
+}
+
+.form-wrap button{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background: #49c1a2;
+    color: white;
+    cursor: pointer;
+}
+
+.form-wrap .button:hover{
+    background: #37a08e;
+
+}
+
+.form-wrap .button-text{
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+footer{
+    text-align: center;
+    margin-top: 10px;
+}
+
+footer a{
+    color: #333;
+}
+
